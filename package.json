@@ -1,6 +1,6 @@
 {
   "name": "react-immer-state",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny immutable state using react context api and immer",
   "main": "lib/react-immer-state.cjs.js",
   "module": "lib/react-immer-state.esm.js",
@@ -34,9 +34,9 @@
     "rollup-plugin-node-resolve": "^5.0.0"
   },
   "peerDependencies": {
-    "immer": "^2",
-    "react": "^16.3",
-    "react-dom": "^16.3"
+    "immer": ">=2",
+    "react": ">=16.3",
+    "react-dom": ">=16.3"
   },
   "files": [
     "lib"
