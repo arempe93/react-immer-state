@@ -1,6 +1,6 @@
 {
   "name": "react-immer-state",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A tiny immutable state using react context api and immer",
   "main": "lib/react-immer-state.cjs.js",
   "module": "lib/react-immer-state.esm.js",

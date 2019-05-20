@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import ConsumerOptimization from './ConsumerOptimization'
+
 export default (Consumer) => {
   class StateConsumer extends Component {
     static defaultProps = {
