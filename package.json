@@ -1,0 +1,51 @@
+{
+  "name": "react-immer-state",
+  "version": "1.0.0",
+  "description": "A tiny immutable state using react context api and immer",
+  "main": "lib/react-immer-state.cjs.js",
+  "module": "lib/react-immer-state.esm.js",
+  "author": "Andrew Rempe <andrewrempe@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arempe93/react-immer-state"
+  },
+  "scripts": {
+    "build": "rimraf lib && rollup -c",
+    "prepublish": "yarn build"
+  },
+  "dependencies": {
+    "hoist-non-react-statics": "^3.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "immer": "^3.1.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rollup": "^1.12.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.0.0"
+  },
+  "peerDependencies": {
+    "immer": "^2",
+    "react": "^16.3",
+    "react-dom": "^16.3"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "context",
+    "immer",
+    "immutable",
+    "react",
+    "state"
+  ]
+}
