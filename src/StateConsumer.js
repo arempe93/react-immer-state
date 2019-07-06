@@ -6,6 +6,7 @@ export default (Consumer) => {
   class StateConsumer extends Component {
     static defaultProps = {
       impure: false,
+      props: {},
       select: state => ({ state: state => state })
     }
 
@@ -20,13 +21,13 @@ export default (Consumer) => {
     }
 
     renderConsumer = (state) => {
-      const { children, impure, render, select } = this.props
+      const { children, impure, props, render, select } = this.props
       const { version } = this.state
 
-      const props = impure ? { version } : {}
+      const optimization = impure ? { version } : {}
 
       return (
-        <ConsumerOptimization {...props} state={select(state)}>
+        <ConsumerOptimization {...optimization} state={select(state, props)}>
           {typeof render === 'function' ? render : children}
         </ConsumerOptimization>
       )

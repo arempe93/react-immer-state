@@ -6,7 +6,7 @@ export default (StateConsumer) => (
     class WithState extends Component {
       render() {
         return (
-          <StateConsumer {...consumerProps} select={select}>
+          <StateConsumer {...consumerProps} props={this.props} select={select}>
             {(state) => (
               <WrappedComponent {...state} {...this.props} />
             )}
@@ -17,8 +17,8 @@ export default (StateConsumer) => (
 
     hoist(WithState, WrappedComponent)
 
-    const wrappedDisplayName = WrappedComponent.displayName || WrappedComponent.name || 'Component'
-    WithState.displayName = `WithState(${wrappedDisplayName})`
+    const wrappedName = WrappedComponent.displayName || WrappedComponent.name || 'Component'
+    WithState.displayName = `WithState(${wrappedName})`
 
     return WithState
   }
