@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import createStateConsumer from './StateConsumer'
 import createWithState from './withState'
 
-const createState = (initialState = {}) => {
+const createState = (initialState = {}, options = {}) => {
   let updateState = null
 
   const { Provider, Consumer } = React.createContext({})
@@ -12,10 +12,10 @@ const createState = (initialState = {}) => {
   const mutate = (fn, cb = undefined) => {
     if (typeof updateState === 'function') {
       updateState(fn, cb)
+    } else {
+      initialState = produce(initialState, fn)
+      if (typeof cb === 'function') cb()
     }
-
-    initialState = produce(initialState, fn)
-    if (typeof cb === 'function') cb()
   }
 
   class StateProvider extends Component {
@@ -45,8 +45,8 @@ const createState = (initialState = {}) => {
     }
   }
 
-  const StateConsumer = createStateConsumer(Consumer)
-  const withState = createWithState(StateConsumer)
+  const StateConsumer = createStateConsumer(Consumer, options)
+  const withState = createWithState(StateConsumer, options)
 
   return {
     StateConsumer,
