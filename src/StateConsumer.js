@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 import ConsumerOptimization from './ConsumerOptimization'
 
-export default (Consumer) => {
+export default (Consumer, options = {}) => {
   class StateConsumer extends Component {
     static defaultProps = {
-      impure: false,
+      impure: !options.optimization,
       props: {},
       select: state => ({ state: state => state })
     }

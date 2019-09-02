@@ -1,7 +1,7 @@
 import hoist from 'hoist-non-react-statics'
 import React, { Component } from 'react'
 
-export default (StateConsumer) => (
+export default (StateConsumer, options = {}) => (
   (select, consumerProps = {}) => (WrappedComponent) => {
     class WithState extends Component {
       render() {

@@ -4,7 +4,12 @@ import React, { Component } from 'react'
 import createStateConsumer from './StateConsumer'
 import createWithState from './withState'
 
-const createState = (initialState = {}, options = {}) => {
+const DEFAULT_OPTIONS = {
+  optimization: true
+}
+
+const createState = (initialState = {}, opts = {}) => {
+  const options = { ...DEFAULT_OPTIONS, ...opts }
   let updateState = null
 
   const { Provider, Consumer } = React.createContext({})
